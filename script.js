@@ -12,6 +12,7 @@ const data = [
     for(let i=0;i<data.length;i++){
         if(data[i].profession=='developer'){
             devlopers = devlopers + data[i].name +" ";
+            console.log(data[i]);
         }
     }
     console.log(devlopers);
@@ -41,9 +42,12 @@ const data = [
   
   // 5. Average Age
   function averageAge() {
-    let totalAge = data.reduce((p,c)=>p+c,0);
-    let AverageAge = totalAge/(data.length);
-    console.log(AverageAge);
+    let totalAge = 0;
+    for(let i=0;i<data.length;i++){
+      totalAge += data[i].age;
+    }
+    let ave = totalAge/(data.length);
+    console.log(ave);
   }
   
   // 6. Age Check
